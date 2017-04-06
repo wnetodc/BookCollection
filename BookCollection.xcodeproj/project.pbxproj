@@ -13,6 +13,8 @@
 		131ABA6C1E95C60F004AD778 /* BookCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 131ABA6A1E95C60F004AD778 /* BookCollection.xcdatamodeld */; };
 		131ABA6E1E95C60F004AD778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131ABA6D1E95C60F004AD778 /* Assets.xcassets */; };
 		131ABA711E95C60F004AD778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131ABA6F1E95C60F004AD778 /* LaunchScreen.storyboard */; };
+		131ABA791E95D0E1004AD778 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 131ABA781E95D0E1004AD778 /* img */; };
+		131ABA7B1E95D18E004AD778 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131ABA7A1E95D18E004AD778 /* AddBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		131ABA6D1E95C60F004AD778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		131ABA701E95C60F004AD778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131ABA721E95C60F004AD778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		131ABA781E95D0E1004AD778 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		131ABA7A1E95D18E004AD778 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		131ABA621E95C60F004AD778 /* BookCollection */ = {
 			isa = PBXGroup;
 			children = (
+				131ABA781E95D0E1004AD778 /* img */,
 				131ABA631E95C60F004AD778 /* AppDelegate.swift */,
 				131ABA651E95C60F004AD778 /* ViewController.swift */,
+				131ABA7A1E95D18E004AD778 /* AddBookViewController.swift */,
 				131ABA671E95C60F004AD778 /* Main.storyboard */,
 				131ABA6D1E95C60F004AD778 /* Assets.xcassets */,
 				131ABA6F1E95C60F004AD778 /* LaunchScreen.storyboard */,
@@ -126,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131ABA791E95D0E1004AD778 /* img in Resources */,
 				131ABA711E95C60F004AD778 /* LaunchScreen.storyboard in Resources */,
 				131ABA6E1E95C60F004AD778 /* Assets.xcassets in Resources */,
 				131ABA691E95C60F004AD778 /* Main.storyboard in Resources */,
@@ -140,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131ABA661E95C60F004AD778 /* ViewController.swift in Sources */,
+				131ABA7B1E95D18E004AD778 /* AddBookViewController.swift in Sources */,
 				131ABA641E95C60F004AD778 /* AppDelegate.swift in Sources */,
 				131ABA6C1E95C60F004AD778 /* BookCollection.xcdatamodeld in Sources */,
 			);
@@ -303,6 +311,7 @@
 				131ABA771E95C60F004AD778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
