@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BookCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="BookCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,15 +22,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iHy-pk-uKR">
+                                <rect key="frame" x="16" y="64" width="288" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iHy-pk-uKR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CS3-ep-XO6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iHy-pk-uKR" secondAttribute="trailing" id="VZL-Vo-jHm"/>
+                            <constraint firstItem="iHy-pk-uKR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gMG-ZX-deq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iHy-pk-uKR" secondAttribute="bottom" id="vwi-4V-OeL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JMm-Ex-Tnp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ndg-O5-Es1">
                             <connections>
-                                <segue destination="Y6l-dE-8oL" kind="show" id="GeK-Pk-veE"/>
+                                <segue destination="Y6l-dE-8oL" kind="show" identifier="showBookSegue" id="GeK-Pk-veE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="iHy-pk-uKR" id="P0D-kS-yqB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,6 +83,13 @@
                                     <action selector="adicionarButton:" destination="Y6l-dE-8oL" eventType="touchUpInside" id="kvb-rj-OUx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouM-P2-jPJ">
+                                <rect key="frame" x="137.5" y="399" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="Y6l-dE-8oL" eventType="touchUpInside" id="4Xs-d6-iK6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -76,8 +99,10 @@
                             <constraint firstItem="xFr-ft-oBJ" firstAttribute="centerX" secondItem="gN0-d1-orU" secondAttribute="centerX" constant="1" id="IhX-AC-lzb"/>
                             <constraint firstItem="y1e-CK-P9I" firstAttribute="centerX" secondItem="gN0-d1-orU" secondAttribute="centerX" constant="1" id="IwI-l9-dNk"/>
                             <constraint firstItem="xFr-ft-oBJ" firstAttribute="width" secondItem="oRe-Rs-vLW" secondAttribute="width" id="VfJ-Po-PAR"/>
+                            <constraint firstItem="ouM-P2-jPJ" firstAttribute="centerX" secondItem="gN0-d1-orU" secondAttribute="centerX" id="fTA-oH-lNY"/>
                             <constraint firstItem="oRe-Rs-vLW" firstAttribute="centerX" secondItem="gN0-d1-orU" secondAttribute="centerX" id="hRY-d4-k9O"/>
                             <constraint firstItem="xFr-ft-oBJ" firstAttribute="top" secondItem="oRe-Rs-vLW" secondAttribute="bottom" constant="32" id="nsx-lp-KOs"/>
+                            <constraint firstItem="ouM-P2-jPJ" firstAttribute="top" secondItem="y1e-CK-P9I" secondAttribute="bottom" constant="8" id="tmx-Qr-TyU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Livros" id="CY6-iP-aNE">
@@ -95,6 +120,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addOrUpdateButton" destination="y1e-CK-P9I" id="bem-vb-Jip"/>
+                        <outlet property="deleteButton" destination="ouM-P2-jPJ" id="VOI-dX-3KR"/>
                         <outlet property="livroImageView" destination="oRe-Rs-vLW" id="JaJ-8S-Hi7"/>
                         <outlet property="nomeTextField" destination="xFr-ft-oBJ" id="dG4-J5-Zzb"/>
                     </connections>
