@@ -39,7 +39,6 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
 
     @IBAction func listarFotos(_ sender: Any) {
-        print("photo tapped")
         
         imagePicker.sourceType = .photoLibrary
         
@@ -58,7 +57,11 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
 
     @IBAction func chamarCamera(_ sender: Any) {
-        print("camera tapped")
+        
+        imagePicker.sourceType = .camera
+        
+        present(imagePicker, animated: true, completion: nil)
+   
     }
 
     @IBAction func adicionarButton(_ sender: Any) {
